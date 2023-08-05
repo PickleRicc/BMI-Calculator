@@ -1,6 +1,13 @@
+gradient1 {
+  background-color: #D6E6FE;
+}
+
 body {
   margin: 0;
   padding: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 h1, h2, h3, h4, p {
@@ -8,7 +15,7 @@ h1, h2, h3, h4, p {
   padding: 0;
 }
 
-/* Container Styles */
+
 .container {
   margin: 0 auto;
   padding: 0 20px;
@@ -46,7 +53,7 @@ h1, h2, h3, h4, p {
   background-color: #ffffff; /* Light gray background color */
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.192);
   border-radius: 10px;
-  padding: 10px;
+  padding: 40px;
   
 }
 
@@ -54,11 +61,15 @@ h1, h2, h3, h4, p {
   padding-top: 10px;
 }
 
-.unit-options {
+
+/* Unit Options/Radio buttons */
+.radio-buttons {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  width: 200px;
-  margin: 20px 0;
+  width: 80%;
+  gap: 10px;
+  margin-top: 20px;
 }
 
 input[type="radio"] {
@@ -66,48 +77,132 @@ input[type="radio"] {
   width: 1.3em;
   height: 1.3em;
   border: 1px solid #ccc;
-  accent-color: lightblue;
+  /* accent-color: lightblue; */
 }
 
+input[type="radio"]:checked {
+  background-color: #ccc;
+}
 
+/* Height & Weight Labels */
+.measurement-labels {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin-top: 10px;
+}
+
+.measurement-labels p {
+  font-size: 12px;
+  color: gray;
+  margin-top: 20px;
+}
+
+/* CM, KG, IN Label for USer inputs */
 label {
   font-weight: bold;
   font-size: 14px;
-  margin-left: 10px;
 }
 
-.user-size {
+.label-cm, .label-kg, .label-in{
+  position:absolute;
+  right: 4px;
+  color: blue;
+  font-size: 18px;
+  
+}
+
+
+
+
+/* User Inputs */
+.input-container {
+  position: relative;
   display: flex;
-  margin-top: 20px;
-  gap: 120px;
-  font-size: 12px;
-  color: gray;
+  justify-content: center;
+  align-items: center;
 }
 
 
 .inputs {
-  
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  gap: 40px;
 }
 
 .input-fields {
-  width: 50px
+  height: 40px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  border-width: 1px;
+}
+
+.input-fields[type="text"] {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.input-fields:focus {
+  outline: none;
+  border: 1px solid blue;
+}
+
+.input-fields::placeholder {
+  color: black;
+  font-size: 18px;
+  padding-left: 10px;
+  font-weight: bold;
+}
+
+.input-fields-in {
+  height: 40px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  border-width: 1px;
 }
 
 .hidden-row {
   display: none;
+  
 }
 
 
+button {
+  background-color: #345FF6;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  height: 40px;
+  width: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(2, 122, 251);
+}
+
+
+/* Results Container */
 .results-container {
-  background: linear-gradient(to right, blue, rgb(58, 57, 57)) ;
+  background: linear-gradient(90deg, #345FF6 0%, #587DFF 100%);
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   border-top-right-radius: 100px;
   border-bottom-right-radius: 100px;
   height: 120px;
-  width: 400px;
+  width: 500px;
   margin-top: 20px;
   display: flex;
+  align-self: stretch;
 }
 
 .bmi-container, .bmi-number{
@@ -152,6 +247,8 @@ label {
   width: 400px;
   margin:auto 0;
   padding-top: 50px;
+  line-height: 1.5;
+  color: var(--gunmetal, #253347);
 }
 
 .results-text h1 {
@@ -163,6 +260,128 @@ label {
   height: auto;
   padding-bottom: 20px;
 }
+
+
+/* Tips Section  */
+
+.tips-container {
+  width: auto;
+  height: 402px;
+  flex-shrink: 0;
+  border-radius: 35px;
+  background: var(--gradient1, linear-gradient(315deg, #D6E6FE 0%, rgba(96, 134, 136, 0) 100%));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  margin-top: 100px;
+}
+
+.tips-container h1 {
+    color: var(--gunmetal, #253347);
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -1.2px;
+    margin:24px 0;
+}
+
+.tips-container p {
+    color: var(--gunmetal, #5E6E85);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.8px;
+}
+
+
+/* Limitations of BMI */
+
+.limits-container {
+  height: 2000px;
+  background: var(--pure-white, #FFF);
+  position: relative;
+}
+
+.limits-container h1 {
+    color: var(--gunmetal, #253347);
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -1.2px;
+    margin-top: 100px;
+   
+}
+
+.limits-p {
+  width: 500px;
+}
+
+.limits-container p {
+    color: var(--gunmetal, #5E6E85);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.8px;
+    
+    
+}
+
+.frame {
+  display: flex;
+  width: 365px;
+  padding: 32px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  border-radius: 16px;
+  background: var(--pure-white, #FFF);
+  box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
+  
+}
+
+.frame h1 {
+}
+
+.gender, .age, .pregnancy, .race, .muscle {
+  position: absolute;
+}
+
+.gender {
+  right: 70px;
+  top: 0;
+}
+
+.age {
+  right: 500px;
+  top: 470px;
+}
+
+.pregnancy {
+  top: 900px;
+  right: 700px;
+  
+}
+
+.race {
+  top: 900px;
+  right: 200px;
+}
+
+.muscle {
+  right: 0;
+  top: 470px;
+}
+
+/* Container Styles */
 
 
 /* Tablet Size */
@@ -221,6 +440,101 @@ label {
   .container {
     width: 80%;
   }
+  .intro h1 {
+    font-size: 40px;
+    text-align: center;
+  }
 
- 
+  .intro p {
+    font-size: 16px;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  .results-container {
+    width: 100%;
+  }
+
+  .bmi-number {
+    text-align: center;
+
+  }
+
+  .bmi-suggestion {
+    display: none;
+  }
+  
+  /* Second Section */
+  
+  .what-your-results-mean{
+    margin-top: 80px;
+    margin: auto;
+  }
+
+  .results {
+    flex-direction: column;
+    width: fit-content;
+    margin: auto;
+  }
+
+  .man-eating {
+    width: 300px;
+    height: auto;
+  }
+
+  .results-text {
+    text-align: center;
+    width: auto;
+  }
+
+  .results-text h1 {
+    margin-top: 20px;
+  }
+
+  /* Tips Section  */
+
+  .tips-container {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+  }
+
+  .tips-container h1 {
+    margin-bottom: 20px;
+  }
+
+  .tips-container p {
+    margin-bottom: 20px;
+  }
+
+  /* Limitations of BMI */
+
+  .limits-container {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .limits-container h1 {
+    margin-top: 80px;
+    margin-bottom: 20px;
+  }
+
+  .limits-p {
+    width: 100%;
+    text-align: center;
+  }
+
+  .frame {
+    width: 100%;
+  }
+
+  .gender, .age, .pregnancy, .race, .muscle {
+    position: relative;
+    right: 0;
+    top: 0;
+  }
 }
